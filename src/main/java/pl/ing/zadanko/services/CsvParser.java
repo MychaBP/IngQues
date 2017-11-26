@@ -1,4 +1,4 @@
-package pl.ing.zadanko.Services;
+package pl.ing.zadanko.services;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +35,8 @@ public class CsvParser {
             }
         });
 
-        BufferedReader br = null;
-        String line = "";
+        BufferedReader br;
+        String line;
         String csvSplitBy = ",";
         for(File fil : csvFiles) {
             try {

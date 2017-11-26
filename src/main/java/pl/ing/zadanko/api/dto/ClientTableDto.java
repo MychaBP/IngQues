@@ -3,10 +3,19 @@ package pl.ing.zadanko.api.dto;
 
 public class ClientTableDto {
 
-    Integer clientNr;
-    String name;
-    String region;
-    String branza;
+    private Integer id;
+    private Integer clientNr;
+    private String name;
+    private String region;
+    private String branza;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public Integer getClientNr() {
         return clientNr;

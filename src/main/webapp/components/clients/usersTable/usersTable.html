@@ -1,0 +1,22 @@
+<users-filter></users-filter>
+<table>
+    <tr>
+        <th>Lp.</th>
+        <th>Nazwa</th>
+        <th>Numer</th>
+        <th>Region</th>
+        <th>Branża</th>
+    </tr>
+    <tr ng-repeat="client in clients">
+        <td>{{$index + 1}}</td>
+        <td>{{client.name}}</td>
+        <td>{{client.clientNr}}</td>
+        <td>{{client.region}}</td>
+        <td>{{client.branza}}</td>
+        <td>
+            <a ng-href="#note/{{client.id}}"><button>Notatki</button></a>
+            <a ng-href="#details/{{client.id}}"><button>Szczeguły</button></a>
+        </td>
+    </tr>
+<button ng-click="ctrl.a()">test</button>
+</table>

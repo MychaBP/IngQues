@@ -1,16 +1,24 @@
 package pl.ing.zadanko.api.dto;
 
-import java.sql.Timestamp;
 import java.time.LocalDate;
 
 public class ClientFullDto {
-    Integer clientNr;
-    String name;
-    String region;
-    String phoneNumber;
-    String branza;
-    String email;
-    LocalDate activityFrom;
+    private Integer clientId;
+    private Integer clientNr;
+    private String name;
+    private String region;
+    private String phoneNumber;
+    private String branza;
+    private String email;
+    private String activityFrom;
+
+    public Integer getClientId() {
+        return clientId;
+    }
+
+    public void setClientId(Integer clientId) {
+        this.clientId = clientId;
+    }
 
     public Integer getClientNr() {
         return clientNr;
@@ -60,11 +68,11 @@ public class ClientFullDto {
         this.email = email;
     }
 
-    public LocalDate getActivityFrom() {
+    public String getActivityFrom() {
         return activityFrom;
     }
 
-    public void setActivityFrom(LocalDate activityFrom) {
+    public void setActivityFrom(String activityFrom) {
         this.activityFrom = activityFrom;
     }
 }

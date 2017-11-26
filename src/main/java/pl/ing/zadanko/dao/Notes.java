@@ -1,5 +1,7 @@
 package pl.ing.zadanko.dao;
 
+import org.hibernate.annotations.ManyToAny;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -13,24 +15,30 @@ public class Notes {
 
     @Id
     @GeneratedValue
-    Integer Id;
+    Integer id;
 
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "CLIENT_ID")
     Clients client;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "PARENT_ID")
+    Notes parentNote;
+
     String name;
     String text;
     Timestamp createAt;
     Timestamp lastModify;
+    boolean block;
+
 
     public Integer getId() {
-        return Id;
+        return id;
     }
 
     public void setId(Integer id) {
-        Id = id;
+        id = id;
     }
 
     public Clients getClient() {
@@ -71,5 +79,21 @@ public class Notes {
 
     public void setLastModify(Timestamp lastModify) {
         this.lastModify = lastModify;
+    }
+
+    public Notes getParentNote() {
+        return parentNote;
+    }
+
+    public void setParentNote(Notes parentNote) {
+        this.parentNote = parentNote;
+    }
+
+    public boolean isBlock() {
+        return block;
+    }
+
+    public void setBlock(boolean block) {
+        this.block = block;
     }
 }

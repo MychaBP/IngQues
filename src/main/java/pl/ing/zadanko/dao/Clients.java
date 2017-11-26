@@ -5,10 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
 import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
+@Table(name="Clients")
 public class Clients {
 
     @Id
@@ -44,6 +46,13 @@ public class Clients {
 
     @OneToMany(mappedBy = "client")
     List<Notes> notes;
+
+    public Clients() {
+    }
+
+    public Clients(Integer id) {
+        this.setId(id);
+    }
 
     public Integer getId() {
         return id;

@@ -1,4 +1,4 @@
-package pl.ing.zadanko.Services;
+package pl.ing.zadanko.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,7 +39,7 @@ public class ReportService {
     private List<Object[]> getDataForDayliReport(){
         Timestamp dateTo = Timestamp.valueOf(LocalDateTime.now());
         Timestamp dateFrom = Timestamp.valueOf(LocalDateTime.now().minusDays(1));
-        return clientsRepository.findNoteCountToDaylyReport(dateFrom, dateTo);
+        return clientsRepository.findNoteCountToDailyReport(dateFrom, dateTo);
     }
 
     private void addHederLine(List<String> list) {
@@ -72,7 +72,7 @@ public class ReportService {
 
     private void saveReport(List<String> report) {
         try {
-            FileWriter fileWriter = new FileWriter("C:\\Users\\Mycha\\Desktop\\zadanie\\" + prepareDaylyReportFileName());
+            FileWriter fileWriter = new FileWriter("C:\\Users\\Mycha\\Desktop\\zadanie\\" + prepareDailyReportFileName());
 
             for(String vers : report) {
                 fileWriter.append(vers);
@@ -85,7 +85,7 @@ public class ReportService {
 
     }
 
-    private String prepareDaylyReportFileName() {
+    private String prepareDailyReportFileName() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("report_")
                 .append(LocalDate.now().toString())

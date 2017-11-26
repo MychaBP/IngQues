@@ -15,11 +15,21 @@ public interface ClientsRepository extends CrudRepository<Clients, Integer> {
             "where n.CREATE_AT between :from and :to " +
             "group by c.BRANZA";
 
+    static final String searchQuery = "select * from zadanko.clients " +
+            "where BRANZA like :branza and REGION like :region";
+
     Clients findOneByClientNr(Integer clientNr);
 
     @Override
     List<Clients> findAll();
 
     @Query(value = query, nativeQuery = true)
-    public List<Object[]> findNoteCountToDaylyReport(@Param("from") Timestamp dateFrom, @Param("to") Timestamp dateTo);
+    public List<Object[]> findNoteCountToDailyReport(@Param("from") Timestamp dateFrom, @Param("to") Timestamp dateTo);
+
+    @Query(value = searchQuery, nativeQuery = true)
+    public List<Object[]> findByParams(@Param("branza") String branza, @Param("region") String region);
+
+    public List<Clients> findByBranzaContaining(String branza);
+
+    public List<Clients> findByBranzaContainingAndRegionContaining(String branza, String region);
 }

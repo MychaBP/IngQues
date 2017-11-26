@@ -1,16 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
-<script>https://ajax.googleapis.com/ajax/libs/angularjs/1.6.5/angular.min.js</script>
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<html>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="angular-route.js"></script>
+   <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.14.3/ui-bootstrap-tpls.js"></script>-->
+    <script src="ui-bootstrap-tpls-2.5.0.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-<div ng-app="ing">
+    <head>
+        <meta charset="UTF-8">
+        <title>IngQuest</title>
+    </head>
+    <body ng-app="ing" class="ng-cloak">
+        <div ng-view></div>
 
-
-</div>
-
-</body>
+        <script src="app.js"></script>
+        <script src="components/clients/fullClientsView/fullUsersTable/fullUsersTable.js"></script>
+        <script src="components/clients/usersTable/usersTable.js"></script>
+        <script src="components/clients/usersFilter/usersFilter.js"></script>
+        <script src="components/clients/main/main.js"></script>
+        <script src="components/notes/mainNotes/mainNotes.js"></script>
+        <script src="components/notes/notesTable/notesTable.js"></script>
+        <script src="components/notes/notesTable/popupCtrl.js"></script>
+        <script src="components/route/appRoute.js"></script>
+        <script src="components/popups/errorPopup.js"></script>
+    </body>
 </html>

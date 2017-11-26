@@ -1,0 +1,17 @@
+<button ng-click="ctrl.addNote()">Dodaj Notatkę</button>
+<table>
+    <tr>
+        <th>Lp.</th>
+        <th>Tytuł</th>
+        <th>Treść</th>
+        <th>Akcje</th>
+    </tr>
+    <tr ng-repeat="note in notes">
+        <td>{{$index + 1}}</td>
+        <td>{{note.name}}</td>
+        <td>{{note.text}}</td>
+        <td>
+            <button ng-click="ctrl.open(note)">Edytuj</button>
+        </td>
+    </tr>
+</table>

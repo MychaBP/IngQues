@@ -1,9 +1,9 @@
 package pl.ing.zadanko.api.dto;
 
 
-public class FilterDto {
-    String region;
-    String branza;
+public class ClientsFilterDto {
+    private String region;
+    private String branza;
 
     public String getRegion() {
         return region;

@@ -11,4 +11,5 @@ public class ZadankoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ZadankoApplication.class, args);
 	}
+
 }

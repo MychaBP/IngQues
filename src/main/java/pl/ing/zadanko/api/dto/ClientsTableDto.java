@@ -4,7 +4,7 @@ import java.util.List;
 
 public class ClientsTableDto {
 
-    List<ClientTableDto> clients;
+    private List<ClientTableDto> clients;
 
     public List<ClientTableDto> getClients() {
         return clients;

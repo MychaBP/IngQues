@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface NotesRepository extends CrudRepository<Notes, Integer> {
 
-    List<Notes> findByClientNr(Integer clientNr);
+    List<Notes> findByClient_Id(Integer clientNr);
+
 }

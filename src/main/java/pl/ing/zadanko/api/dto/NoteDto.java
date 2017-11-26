@@ -1,10 +1,14 @@
 package pl.ing.zadanko.api.dto;
 
 public class NoteDto {
-    Integer Id;
-    Integer clientNr;
-    String name;
-    String text;
+    private Integer Id;
+    private Integer clientNr;
+    private String name;
+    private String text;
+    private Integer parentId;
+    private boolean isBlock;
+
+
 
     public Integer getId() {
         return Id;
@@ -36,5 +40,21 @@ public class NoteDto {
 
     public void setText(String text) {
         this.text = text;
+    }
+
+    public Integer getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Integer parentId) {
+        this.parentId = parentId;
+    }
+
+    public boolean isBlock() {
+        return isBlock;
+    }
+
+    public void setBlock(boolean block) {
+        isBlock = block;
     }
 }
